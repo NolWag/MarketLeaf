@@ -4,10 +4,21 @@ body {
 .header {
   position: fixed;
   top: 0;
-  background-color: #fff;
   width: 100%;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+  height: auto; }
+  @media only screen and (max-width: 800px) {
+    .header {
+      justify-content: center; } }
+
+.header.active {
+  background: #000000b3;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25); }
 
 .logo {
   width: 200px; }
@@ -16,29 +27,41 @@ body {
   list-style-type: none;
   display: flex;
   align-items: center; }
+  @media only screen and (max-width: 800px) {
+    .nav {
+      display: none; } }
 
 .nav-item {
   display: inline;
   margin: 0 2em;
   font-family: 'Merriweather', serif;
   font-weight: 300;
-  font-size: 1.1em; }
+  font-size: 1.1em;
+  color: #fff; }
   .nav-item:hover {
     border-bottom: solid 3px #1A73AA; }
 
 .first {
-  background-image: url("../public/imgs/Biz-Meeting.jpg");
+  background-image: url("../public/imgs/business-meeting-dark.jpg");
+  background-size: cover;
   height: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-repeat: no-repeat; }
+  @media only screen and (max-width: 800px) {
+    .first {
+      height: 600px; } }
 
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 20%; }
+  @media only screen and (max-width: 800px) {
+    .main-container {
+      margin: 0;
+      align-items: center; } }
 
 .main-headline {
   font-size: 6em;
@@ -46,6 +69,9 @@ body {
   font-family: 'Merriweather', sans-serif;
   font-style: italic;
   font-weight: 300; }
+  @media only screen and (max-width: 800px) {
+    .main-headline {
+      font-size: 2.5em; } }
 
 .main-button {
   border: solid 5px #fff;
@@ -57,29 +83,57 @@ body {
   .main-button:hover {
     background-color: #fff;
     color: #000; }
+  @media only screen and (max-width: 800px) {
+    .main-button {
+      font-size: 1em;
+      padding: .5em 1.5em;
+      border-width: 3px; } }
 
 .second {
-  height: 800px;
+  height: auto;
   background-color: #fff; }
 
 .second-container {
   display: flex;
-  padding: 10em; }
+  padding: 10em;
+  align-self: center; }
+  @media only screen and (max-width: 1400px) {
+    .second-container {
+      padding: 6em; } }
+  @media only screen and (max-width: 800px) {
+    .second-container {
+      padding: 2em; } }
 
 .second-content {
   margin-left: 2em; }
+  @media only screen and (max-width: 800px) {
+    .second-content {
+      margin: 1em; } }
 
 .second-title {
   font-size: 4em;
   margin: 0;
   font-family: 'Merriweather', serif;
-  font-weight: 400; }
+  font-weight: 300;
+  font-style: italic; }
+  @media only screen and (max-width: 800px) {
+    .second-title {
+      font-size: 2em; } }
+  @media only screen and (max-width: 1400px) {
+    .second-title {
+      font-size: 3em; } }
 
 .second-text {
   font-size: 2em;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   margin: 0; }
+  @media only screen and (max-width: 800px) {
+    .second-text {
+      font-size: 1em; } }
+  @media only screen and (max-width: 1400px) {
+    .second-text {
+      font-size: 1.5em; } }
 
 .second-subline {
   margin-top: 3em;
@@ -87,9 +141,18 @@ body {
   text-align: center;
   font-family: 'Montserrat', serif;
   font-weight: 300; }
+  @media only screen and (max-width: 800px) {
+    .second-subline {
+      font-size: 1em; } }
+  @media only screen and (max-width: 1400px) {
+    .second-subline {
+      font-size: 1.5em; } }
 
 .leaf {
   width: 100px; }
+  @media only screen and (max-width: 800px) {
+    .leaf {
+      width: 60px; } }
 
 .blue-line {
   min-width: 5px;
@@ -110,6 +173,13 @@ body {
   margin: 0;
   font-weight: 300;
   line-height: 1em; }
+  @media only screen and (max-width: 800px) {
+    .portfolio-headline {
+      font-size: 1em;
+      text-align: center; } }
+  @media only screen and (max-width: 1400px) {
+    .portfolio-headline {
+      font-size: 3em; } }
 
 .portfolio-text {
   color: #fff;
@@ -117,46 +187,98 @@ body {
   font-weight: 100;
   font-size: 2.2em;
   margin: .5em 0 2em 0; }
+  @media only screen and (max-width: 800px) {
+    .portfolio-text {
+      font-size: 1em; } }
+  @media only screen and (max-width: 1400px) {
+    .portfolio-text {
+      font-size: 1.5em; } }
 
-.left {
-  width: 50%;
+.img-container {
+  display: flex;
+  align-self: center; }
+
+.portfolio-img {
+  max-width: 600px;
+  padding: 2em; }
+  @media only screen and (max-width: 800px) {
+    .portfolio-img {
+      padding: 0;
+      width: 100%; } }
+  @media only screen and (max-width: 1400px) {
+    .portfolio-img {
+      max-width: 400px; } }
+
+.left, .right {
   padding: 6em; }
-
-.right {
-  width: 50%;
-  padding: 6em;
-  margin-left: 40%; }
+  @media only screen and (max-width: 1400px) {
+    .left, .right {
+      padding: 2em; } }
+  @media only screen and (max-width: 800px) {
+    .left, .right {
+      padding: 0em;
+      width: 100%; } }
 
 .third {
-  height: 800px;
   background-color: #80bd43;
   display: flex; }
+  @media only screen and (max-width: 800px) {
+    .third {
+      height: auto;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0em 2em; } }
 
 .fourth {
-  height: 800px;
   background-color: #1A73AA;
   display: flex; }
+  @media only screen and (max-width: 800px) {
+    .fourth {
+      height: auto;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0em 2em; } }
 
 .fifth {
-  height: 400px;
   display: flex;
   flex-wrap: wrap;
   padding: 12em 5em 0 5em;
   background-color: #fff; }
+  @media only screen and (max-width: 800px) {
+    .fifth {
+      padding: 1em;
+      height: auto; } }
 
 .service {
   flex: 1 1 calc(50%);
-  display: flex; }
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 2em; }
+  @media only screen and (max-width: 800px) {
+    .service {
+      align-self: auto;
+      margin: 2em 0; } }
 
 .service:nth-child(odd) {
   flex: 0 0 50%; }
+  @media only screen and (max-width: 800px) {
+    .service:nth-child(odd) {
+      flex: 0 0 100%; } }
 
 .service-icon {
   height: 100px; }
+  @media only screen and (max-width: 800px) {
+    .service-icon {
+      height: 50px; } }
 
 .service-content {
   margin-left: 2em;
   max-width: 50%; }
+  @media only screen and (max-width: 800px) {
+    .service-content {
+      margin-left: 1em;
+      max-width: none; } }
 
 .service-title {
   font-family: 'Merriweather', serif;
@@ -165,45 +287,68 @@ body {
   font-size: 1.5em;
   margin: 0;
   color: #464646; }
+  @media only screen and (max-width: 800px) {
+    .service-title {
+      font-size: 1.2em; } }
 
 .service-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 100;
   margin: .5em 0; }
+  @media only screen and (max-width: 800px) {
+    .service-text {
+      margin: 0; } }
 
 .service-button-container {
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  margin-top: 6em; }
 
 .service-button {
-  border: solid 4px #434343;
+  border: solid 5px #434343;
   font-family: "Merriweather", serif;
   font-style: italic;
-  padding: 1em 2em;
-  font-size: 1.4em;
-  margin-bottom: 8em; }
+  padding: .5em 1.5em;
+  font-size: 1.5em;
+  margin-bottom: 4em;
+  font-weight: 400; }
+  .service-button:hover {
+    background-color: #434343;
+    color: #fff; }
 
 .last {
   height: 600px;
   width: 100%;
+  background-position: bottom;
   background-repeat: no-repeat;
-  background-image: url("../public/imgs/Biz-Owner.jpg");
+  background-image: url("../public/imgs/contact-dark.jpg");
   display: flex;
   flex-direction: column;
   align-items: center; }
+  @media only screen and (max-width: 800px) {
+    .last {
+      height: 500px; } }
 
 .leaf-bottom {
   align-self: center;
   max-width: 150px;
   margin-top: 5em; }
+  @media only screen and (max-width: 800px) {
+    .leaf-bottom {
+      max-width: 80px;
+      margin-top: 2em; } }
 
 .last-headline {
   text-align: center;
   color: #fff;
   font-family: 'Merriweather', serif;
+  font-style: italic;
   font-size: 3em;
   margin: 0;
-  font-style: italic; }
+  font-weight: 300; }
+  @media only screen and (max-width: 800px) {
+    .last-headline {
+      font-size: 2em; } }
 
 .last-form {
   border: solid 4px #fff;
@@ -221,6 +366,9 @@ body {
 .row {
   display: flex;
   justify-content: space-between; }
+  @media only screen and (max-width: 600px) {
+    .row {
+      flex-direction: column; } }
 
 .submit-button {
   font-family: 'Montserrant', sans-serif;
@@ -229,6 +377,9 @@ body {
   color: #80bd43;
   padding: .3em;
   margin-top: .5em; }
+  .submit-button:hover {
+    background-color: #80bd43;
+    color: #fff; }
 
 .footer {
   margin: 0;
@@ -240,3 +391,47 @@ body {
   color: #fff;
   font-family: 'Montserrant', sans-serif;
   font-weight: 300; }
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ }
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */ }
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer; }

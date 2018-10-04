@@ -21,4 +21,4 @@ gulp.task('watch', function() {
   gulp.watch('./js/*.js', ['js'])
 });
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'connect', 'watch']);
